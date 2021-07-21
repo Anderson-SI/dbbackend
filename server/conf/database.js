@@ -4,7 +4,7 @@ const db = pg ({
     password: '12345',
     host: 'localhost',
     port: 5432,
-    database: 'bdnotflix'
+    database: 'dbnetprime'
 })
 
 module.exports = db;
