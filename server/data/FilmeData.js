@@ -1,7 +1,7 @@
 const database = require('../conf/database');
 
 exports.getFilmes = function () {
-    return database.query('SELECT f.titulo_idtitulo, f.video_idvideo, t.titulo, t.sinopse, t.ano, f.datalancamento, v.duracao ' + 
+    return database.query('SELECT f.titulo_idtitulo, f.video_idvideo, t.titulo, t.sinopse, t.ano, f.datalancamento, v.duracao, v.caminhodoarquivo ' + 
     'FROM netprime.filme f INNER JOIN netprime.titulo t ON (t.idtitulo = f.titulo_idtitulo) ' + 
     'INNER JOIN netprime.video v ON (f.video_idvideo = v.idvideo)')
 }
@@ -36,5 +36,5 @@ exports.updateVideo = function (idVideo, dur, path) {
 }
 
 exports.deleteFilme = function (id) {
-    return database.oneOrNone('DELETE FROM netprime.filme WHERE titulo_idtitulo = $1 AND video_idvideo = $2', [id, id]);
+    return database.oneOrNone('DELETE FROM netprime.filme WHERE titulo_idtitulo = $1', [id]);
 }

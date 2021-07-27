@@ -17,10 +17,10 @@ exports.saveFilme = async function (filme) {
     return fil;
 } 
 
-exports.updateFilme = async function (id, filme) {
-    await exports.getFilme(id);
-    const upTitulo = await FilmeDate.updateTitulo(id, filme.titulo, filme.sinopse, filme.ano);
-    const upVideo = await FilmeDate.updateVideo(id, filme.duracao, filme.caminhodoarquivo);
+exports.updateFilme = async function (filme) {
+    await exports.getFilme(filme.titulo_idtitulo);
+    const upTitulo = await FilmeDate.updateTitulo(filme.titulo_idtitulo, filme.titulo, filme.sinopse, filme.ano);
+    const upVideo = await FilmeDate.updateVideo(filme.video_idvideo, filme.duracao, filme.caminhodoarquivo);
     return 'ok';
 }
 

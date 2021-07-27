@@ -26,10 +26,10 @@ router.post('/filme', async function (req, res) {
 })
 
 // ROTA PARA ALTERAR UM FILME
-router.put('/filme/:titulo_idtitulo', async function (req, res) {
+router.put('/filme', async function (req, res) {
     const filme = req.body;
     try {
-        await FilmeService.updateFilme(req.params.titulo_idtitulo, filme);
+        await FilmeService.updateFilme(filme);
         res.status(204).end();
     } catch (e) {
         res.status(404).send(e.message);

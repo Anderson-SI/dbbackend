@@ -11,7 +11,7 @@ SELECT * FROM netprime.titulo;
 SELECT * FROM netprime.video;
 
 -- SELECIONA TODOS OS VÍDEOS
-SELECT f.titulo_idtitulo, f.video_idvideo, t.titulo, t.sinopse, t.ano, f.datalancamento, v.duracao 
+SELECT f.titulo_idtitulo, f.video_idvideo, t.titulo, t.sinopse, t.ano, f.datalancamento, v.duracao, v.caminhodoarquivo 
 						 FROM netprime.filme f INNER JOIN netprime.titulo t ON (t.idtitulo = f.titulo_idtitulo) 
 					     INNER JOIN netprime.video v ON (f.video_idvideo = v.idvideo)
 
